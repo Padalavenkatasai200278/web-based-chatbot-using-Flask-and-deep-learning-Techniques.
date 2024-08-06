@@ -1,52 +1,57 @@
-web-based chatbot using Flask and deep learning Techniques.Trained a chatbot on a dataset (data.json) containing categories, patterns, and responses. Developed training script (training.py) and execution script (app.py). Designed the web interface using HTML and CSS. Utilized an ANN to classify user messages and generate appropriate responses.
+Web-Based Chatbot Using Flask and Deep Learning
+PROJECT STRUCTURE/web-based-chatbot
+    /static
+        /style
+            styles.css
+    /templates
+        index.html
+    app.py
+    data.json
+    training.py
+    texts.pkl
+    labels.pkl
+    model.h5
+Requirements:---
+Python
+Keras
+NLTK
+Flask
+HTML/CSS
+Overview:---
+This project involves creating a web-based chatbot using Flask and deep learning techniques. The chatbot is trained on a dataset (data.json) and uses an artificial neural network (ANN) to classify user messages and generate  responses.
 
-The project requires you to have good knowledge of Python, Keras, and Natural language processing (NLTK). Along with them, we will use some helping modules which you can download using the python-pip command.
+Project Components
+data.json: Contains predefined patterns, categories (intents), and responses.
+training.py: Python script to build and train the ANN model on the dataset.
+texts.pkl: Pickle file storing the vocabulary (list of words).
+labels.pkl: Pickle file containing the list of categories (labels).
+model.h5: Trained model file with weights and architecture information.
+app.py: Flask script to create and run the web-based GUI for the chatbot.
+static/style/styles.css: CSS file for styling the web interface.
+templates/index.html: HTML file for the web interface layout.
+Steps to Create the Chatbot
+Import and Load Data:
 
-data.json – The data file which has predefined patterns and responses.
-trainning.py – In this Python file, we wrote a script to build the model and train our chatbot.
-Texts.pkl – This is a pickle file in which we store the words Python object using Nltk that contains a list of our vocabulary.
-Labels.pkl – The classes pickle file contains the list of categories(Labels).
-model.h5 – This is the trained model that contains information about the model and has weights of the neurons.
-app.py – This is the flask Python script in which we implemented web-based GUI for our chatbot. Users can easily interact with the bot.
-static/style/styles.css and html – Designing the web interface .
+Create a file named training.py.
+Import necessary packages and initialize variables.
+Parse the data.json file using the json package to extract patterns, intents, and responses.
+Preprocess Data:
 
+Tokenize the text data using nltk.word_tokenize().
+Lemmatize words to their base forms and remove duplicates.
+Create texts.pkl and labels.pkl to store vocabulary and labels, respectively.
+Create Training and Testing Data:
 
+Convert text patterns into numerical data for model training.
+Define input (patterns) and output (categories) for training.
+Build the Model:
 
-Here are the 5 steps to create a chatbot :
+Construct a deep neural network using Keras with three layers.
+Train the model for 200 epochs and achieve high accuracy.
+Save the trained model as model.h5.
+Deploy with Flask:
 
-Import and load the data file
-Preprocess data
-split the data into training and test
-Build the ANN model using keras
-Predict the outcomes
-Deploy the model in the Flask app
-
-1.Import and load the data file
-First, make a file name as trainning.py. We import the necessary packages for our chatbot and initialize the variables we will use in our Python project.
-The data file is in JSON format so we used the json package to parse the JSON file into Python. This is how our data.json file looks like.
-
-2. Preprocess data
-When working with text data, we need to perform various preprocessing on the data before design an ANN model. Tokenizing is the most basic and first thing you can do on text data. Tokenizing is the process of breaking the whole text into small parts like words.
-Here we iterate through the patterns and tokenize the sentence using nltk.word_tokenize() function and append each word in the words list. We also create a list of classes for our tags.
-Now we will lemmatize each word and remove duplicate words from the list. Lemmatizing is the process of converting a word into its lemma form and then creating a pickle file to store the Python objects which we will use while predicting.
-
-3. Create training and testing data
-Now, we will create the training data in which we will provide the input and the output. Our input will be the pattern and output will be the class our input pattern belongs to. But the computer doesn’t understand text so we will convert text into numbers.
-
-4.Build the model
-We have our training data ready, now we will build a deep neural network that has 3 layers. We use the Keras sequential API for this. After training the model for 200 epochs, we achieved 100% accuracy on our model. Let us save the model as ‘model.h5’
-
-5.Predict the response (Flask web-based GUI)
-Now to predict the sentences and get a response from the user to let us create a new file ‘app.py’using flask web-based framework.
-
-Note for making flask app we need to make to folders name as static and templates and app.py files.
-
-static folder contains a subfolder with name styles. The styles folder contain css file with the name style.css
-Templates folder HTML file with the name of index.html
-app.py file for run the flask app using IDE.
-
-
-
-We will load the trained model and then use a graphical user interface that will predict the response from the bot. The model will only tell us the class it belongs to, so we will implement some functions which will identify the class and then retrieve a random response from the list of responses.
-Again we import the necessary packages and load the ‘texts.pkl’ and ‘labels.pkl’ pickle files which we have created when we trained our model:
-To predict the class, we will need to provide input in the same way as we did while training. So we will create some functions that will perform text preprocessing and then predict the class. After predicting the class, we will get a random response from the list of intents.
+Create a Flask application in app.py.
+Set up the web interface with HTML and CSS in the templates/ and static/ folders.
+Load the trained model and pickle files (texts.pkl and labels.pkl).
+Implement functions to preprocess user input, predict categories, and retrieve random responses.
