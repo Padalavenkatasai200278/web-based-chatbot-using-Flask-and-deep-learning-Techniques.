@@ -1,3 +1,4 @@
+IN THIS README FIRST GO TO CODE WATCH THE INFORMATION (DONT USE PREVIEW TO SEE THE PROCESS)
 Web-Based Chatbot Using Flask and Deep Learning
 PROJECT STRUCTURE/web-based-chatbot
     /static
