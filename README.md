@@ -1,3 +1,7 @@
+web-based chatbot using Flask and deep learning Techniques.Trained a chatbot on a dataset (data.json) containing categories, patterns, and responses. Developed training script (training.py) and execution script (app.py). Designed the web interface using HTML and CSS. Utilized an ANN to classify user messages and generate appropriate responses.
+
+The project requires you to have good knowledge of Python, Keras, and Natural language processing (NLTK). Along with them, we will use some helping modules which you can download using the python-pip command.
+
 data.json – The data file which has predefined patterns and responses.
 trainning.py – In this Python file, we wrote a script to build the model and train our chatbot.
 Texts.pkl – This is a pickle file in which we store the words Python object using Nltk that contains a list of our vocabulary.
